@@ -1,6 +1,6 @@
 <?
 /**
- * Controller responsible to return popular songs based on users country input
+ * Controller responsible for returning the top tracks for a specified artist
  *
  *
  * @author Daniel Gundi
