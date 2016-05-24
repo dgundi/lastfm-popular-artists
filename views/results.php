@@ -18,15 +18,14 @@
     <div class="container">
 	    <ul>
 	      <?
-			foreach ($LastfmApi['topartists']['artist'] as $key => $value) {
-				echo '<li class="row"><div class="tile"><div class="col-sm-4"><img class="img-responsive" src="' . $value['image']['1']['#text'] . '"/></div><div class="col-sm-8">' . $value['name'] . '</div></div></li>';
+			foreach ($popularArtistArray['topartists']['artist'] as $key => $value) {
+				echo '<li class="row"><div class="tile"><div class="col-sm-4"><a target="_blank" href="' . __SITE_PATH . '?artist=' . $value['name'] . '"><img class="img-responsive" src="' . $value['image']['1']['#text'] . '"/></a></div><div class="col-sm-8">' . $value['name'] . '</div></div></li>';
 			}
 	      ?>
 	     </ul>
 		<div class="text-center">
 	     <a class="btn btn-primary" href="<? echo __SITE_PATH; ?>">Back to search</a>
 	     <?
-			if($page < 10):
 				$page++;
 				$query = $_GET;
 				// replace parameter(s)
@@ -34,8 +33,6 @@
 				// rebuild url
 				$query_result = http_build_query($query);
 			    echo '<a class="btn btn-primary" href="' . $_SERVER['PHP_SELF'] . '?' . $query_result . '">Next Page</a>';
-			endif;
-
 		?>
 
 		

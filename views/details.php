@@ -11,19 +11,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="/site/lastfm/css/style.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   </head>
 
   <body>
 
     <div class="container">
-      <form method="GET" class="form-signin" action="index.php" >
-        <h2 class="form-signin-heading">Enter a country</h2>
-        <label for="inputCountry" class="sr-only">Country</label>
-        <input type="text" id="inputCountry" name="inputCountry" class="form-control" placeholder="Enter country" ng-model="country" required autofocus>
-        <input type="text" id="inputPage" name="inputPage" ng-model="page" class="form-control hidden" value="1">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
-      </form>
+    <h2>Top Tracks for <? echo $artist; ?></h2>
+	    <ul>
+	      <?
+			foreach ($artistTracksArray['toptracks']['track'] as $key => $value) {
+				echo $value['name'] . '<br/>';
+			}
+	      ?>
+	     </ul>
+		<div class="text-center">
+	     <a class="btn btn-primary" href="<? echo __SITE_PATH; ?>">Back to search</a>		
+	    </div>
     </div> <!-- /container -->
   </body>
 </html>
+
+
+
+
+
