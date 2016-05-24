@@ -7,13 +7,11 @@
  */
 
 require_once('models/lastfm.php');
-$LastfmApiraw = new LastfmApi(API_URL,API_KEY,$country,$page);
 
-$LastfmApi = $LastfmApiraw->output();
-$LastfmApi = json_decode(file_get_contents($LastfmApi),true);
+$popularArtist = new LastfmApi(API_URL,API_KEY,'geo.gettopartists',ARTISTS_PER_PAGE);
+
+$popularArtistArray = $popularArtist->getArtistbyCountry($country,$page);
 
 require_once('views/results.php');
-
-
 
 ?>
