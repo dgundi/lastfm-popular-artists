@@ -6,7 +6,7 @@
 
 require_once('config.php');
 
-/* Check if any URL parameters have been passed */
+/* Check if any URL parameters have been passed - Routing to be applied */
   if (isset($_GET['inputCountry'])) {
   	$country = $_GET['inputCountry'];
  	$page = $_GET['inputPage'];
